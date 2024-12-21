@@ -1,11 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Random Background Logic
     const backgroundImages = [
-        'assets/images/bg1.webp',
-        'assets/images/bg2.webp',
-        'assets/images/bg3.webp',
-        'assets/images/bg4.webp',
-        'assets/images/bg5.webp'
+        'aimages/bg1.webp',
+        'aimages/bg2.webp',
+        'images/bg3.webp',
+        'images/bg4.webp',
+        'images/bg5.webp'
     ];
     const randomBg = backgroundImages[Math.floor(Math.random() * backgroundImages.length)];
     document.body.style.backgroundImage = `url('${randomBg}')`;
