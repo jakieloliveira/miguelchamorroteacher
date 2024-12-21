@@ -1,0 +1,154 @@
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+    width: 100vw;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+/* Header styling */
+#header {
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 10px 20px;
+    margin: 10px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    color: #333;
+}
+
+#counter-container {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    text-align: right;
+}
+
+/* Game container styling */
+#game-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    width: 100%;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /* 7 columns for larger screens */
+    gap: 1vw;
+    padding: 1vw;
+    max-width: 90%;
+    margin: auto;
+}
+
+/* Card styling */
+.card {
+    width: 9vw;
+    height: 9vw;
+    perspective: 1000px;
+    position: relative;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-image {
+    width: 90%;
+    height: 90%;
+    object-fit: contain;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    border-radius: 10px;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.6s, border-color 0.3s;
+    z-index: 0;
+}
+
+.card.match::after {
+    border: 2px solid limegreen;
+    width: 100%;
+    height: 97%;
+    box-shadow: 0 4px 8px rgba(0, 128, 0, 0.6);
+}
+
+.card-front, .card-back {
+    backface-visibility: hidden;
+    border-radius: 10px;
+    z-index: 1;
+}
+
+.card-front {
+    transform: rotateY(-180deg);
+}
+
+.card-back {
+    transform: rotateY(0deg);
+}
+
+.card.flipped .card-front {
+    transform: rotateY(0deg);
+}
+
+.card.flipped .card-back {
+    transform: rotateY(180deg);
+}
+
+.hidden {
+    display: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .card {
+        width: 20vw;
+        height: 20vw;
+    }
+}
