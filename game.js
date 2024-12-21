@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Random Background Logic
     const backgroundImages = [
-        'aimages/bg1.webp',
+        'images/bg1.webp',
         'aimages/bg2.webp',
         'images/bg3.webp',
         'images/bg4.webp',
@@ -84,14 +84,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Card back (visible initially)
         const cardBackElement = document.createElement('img');
-        cardBackElement.src = 'assets/images/cardback_unflipped.png';
+        cardBackElement.src = 'images/cardback_unflipped.png';
         cardBackElement.classList.add('card-image', 'card-back');
         cardElement.appendChild(cardBackElement);
 
         // Card front (hidden until flipped)
         const imageName = isName ? `${baseName}_name.png` : `${baseName}.png`;
         const cardFrontElement = document.createElement('img');
-        cardFrontElement.src = `assets/images/${imageName}`;
+        cardFrontElement.src = `images/${imageName}`;
         cardFrontElement.classList.add('card-image', 'card-front', 'hidden');
         cardElement.setAttribute('data-name', baseName);
         cardElement.setAttribute('data-isname', isName.toString());
