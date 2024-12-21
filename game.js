@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Random Background Logic
     const backgroundImages = [
         'images/bg1.webp',
-        'aimages/bg2.webp',
+        'images/bg2.webp',
         'images/bg3.webp',
         'images/bg4.webp',
         'images/bg5.webp'
